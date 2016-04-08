@@ -26,7 +26,7 @@ var css = {
     watch: source + 'scss/**/*',
     sassOpts: {
         outputStyle: 'nested',
-        precison: 3,
+        precision: 8,
         errLogToConsole: true,
         includePaths: [bootstrapSass.in + 'assets/stylesheets']
     }
