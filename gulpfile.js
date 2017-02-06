@@ -1,5 +1,6 @@
 /* gulpfile.js */
-var 
+var
+    browserSync = require('browser-sync').create(),
     gulp = require('gulp'),
     sass = require('gulp-sass');
 
@@ -44,11 +45,19 @@ gulp.task('fonts', function () {
 gulp.task('sass', ['fonts'], function () {
     return gulp.src(css.in)
         .pipe(sass(css.sassOpts))
-        .pipe(gulp.dest(css.out));
+        .pipe(gulp.dest(css.out))
+        .pipe(browserSync.stream());
 });
 
+// Static Server + watching scss files
+gulp.task('serve', ['sass'], function() {
+
+    browserSync.init({
+      server: "."
+    });
+
+    gulp.watch(css.watch, ['sass']);
+});
 
 // default task
-gulp.task('default', ['sass'], function () {
-     gulp.watch(css.watch, ['sass']);
-});
+gulp.task('default', ['serve']);
