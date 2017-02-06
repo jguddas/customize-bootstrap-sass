@@ -1,18 +1,12 @@
 # customize-bootstrap-sass
 
-Simple demo of customizing `Bootstrap` CSS styles using `Gulp`.
+Simple project for customizing `Bootstrap` CSS styles using `Gulp`.
 
 ## Usage
 
-1. Check out or download this demo project.
-2. Run command in your terminal:
+1. Clone or download this project.
+2. Install dependencies via `npm install`
+3. Run `npm start`.
+4. Edit the sass files and see the changes.
 
-```
-$ cd customize-bootstrap-sass
-$ npm install
-$ gulp
-```
-
-Then you can see the customized result by opening `demo.html` in your browser.
-
-A detailed [tutorial](http://www.codevoila.com/post/32/create-customized-bootstrap-build-using-bootstrap-sass-and-gulp) is also available. 
+You can also just run `npm run build` instead of `npm start` to only build the theme once.
